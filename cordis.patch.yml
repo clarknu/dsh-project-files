@@ -1,0 +1,9 @@
+# dsh-project-files bundle patch: inserts the dual-face plugin row.
+# Host half (exports ".") runs in the host process and registers the
+# /plugins/project-files/* file API routes via ctx.fs + webServer.
+# Client half (exports "./client") is declared in package.json dsh.client
+# and served by the web GUI client module system.
+- insert:
+    - id: project-files
+      name: 'dsh-project-files'
+      inject: ['webServer']
